@@ -1,0 +1,7 @@
+package testForJeu;
+
+import javax.swing.JComponent;
+
+public class Echiquierr extends JComponent {
+
+}

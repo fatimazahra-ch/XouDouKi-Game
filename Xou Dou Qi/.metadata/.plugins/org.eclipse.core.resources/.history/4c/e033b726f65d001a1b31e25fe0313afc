@@ -1,0 +1,55 @@
+package testForJeu;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
+
+import javax.swing.ImageIcon;
+import javax.swing.JComponent;
+
+public class Echiquierr extends JComponent {
+
+	private static final long serialVersionUID = 1L;
+	ImageIcon chat, chien, elephant, lion, loup, panthere, rat, tigre ;
+	
+	
+	Echiquierr(){
+		 chat = new ImageIcon(getClass().getResource("/img/chat.png")); 
+		 chien = new ImageIcon(getClass().getResource("/img/chien.png")); 
+		 elephant = new ImageIcon(getClass().getResource("/img/elephant.png")); 
+		 lion = new ImageIcon(getClass().getResource("/img/lion.png")); 
+		 loup = new ImageIcon(getClass().getResource("/img/loup.png")); 
+		 panthere = new ImageIcon(getClass().getResource("/img/panthere.png")); 
+		 rat = new ImageIcon(getClass().getResource("/img/chat.png")); 
+		 tigre = new ImageIcon(getClass().getResource("/img/chat.png")); 
+	}
+	
+	protected void paintComponent(Graphics g) {
+		Graphics2D g2 = (Graphics2D) g;
+		
+		//Les cases
+		int CASE_DIM = 50;
+		for(int i = 0; i < 3; i++) {
+			g2.setPaint(new Color(212, 179, 64));
+			g2.fill(new Rectangle2D.Double( (i+1)*CASE_DIM, CASE_DIM, CASE_DIM, CASE_DIM ));
+		}
+			
+		g2.setPaint(new Color(215, 91, 69));
+		g2.fill(new Rectangle2D.Double( (3)*CASE_DIM, CASE_DIM, CASE_DIM, CASE_DIM ));
+		
+		g2.setPaint(new Color(238, 157, 27));
+		g2.fill(new Rectangle2D.Double( (2)*CASE_DIM, CASE_DIM, CASE_DIM, CASE_DIM ));
+		
+		g2.setPaint(new Color(215, 91, 69));
+		g2.fill(new Rectangle2D.Double( (5)*CASE_DIM, CASE_DIM, CASE_DIM, CASE_DIM ));
+		
+		for(int i = 4; i < 7; i++) {
+			g2.setPaint(new Color(212, 179, 64));
+			g2.fill(new Rectangle2D.Double( (i+1)*CASE_DIM, CASE_DIM, CASE_DIM, CASE_DIM ));
+		}
+		
+		g2.dispose();
+	}
+	
+}

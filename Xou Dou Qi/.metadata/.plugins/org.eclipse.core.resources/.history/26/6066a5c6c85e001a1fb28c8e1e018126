@@ -1,0 +1,127 @@
+package testForJeu;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
+
+import javax.swing.ImageIcon;
+import javax.swing.JComponent;
+
+public class Echiquierr extends JComponent {
+
+	private static final long serialVersionUID = 1L;
+	ImageIcon chat, chien, elephant, lion, loup, panthere, rat, tigre ;
+	
+	
+	Echiquierr(){
+		 chat = new ImageIcon(getClass().getResource("/img/chat.png")); 
+		 chien = new ImageIcon(getClass().getResource("/img/chien.png")); 
+		 elephant = new ImageIcon(getClass().getResource("/img/elephant.png")); 
+		 lion = new ImageIcon(getClass().getResource("/img/lion.png")); 
+		 loup = new ImageIcon(getClass().getResource("/img/loup.png")); 
+		 panthere = new ImageIcon(getClass().getResource("/img/panthere.png")); 
+		 rat = new ImageIcon(getClass().getResource("/img/chat.png")); 
+		 tigre = new ImageIcon(getClass().getResource("/img/chat.png")); 
+	}
+	
+	protected void paintComponent(Graphics g) {
+		Graphics2D g2 = (Graphics2D) g;
+		
+		//Les cases
+		int CASE_DIM = 50;
+		boolean isColored = true;
+		
+		for(int k = 0 ; k <9; k++) {
+			if( k==0 || k == 8 ) {
+				for(int i = 0; i < 2; i++) {
+					if(isColored)
+						g2.setPaint(new Color(210, 169, 112));
+					else
+						g2.setPaint(new Color(213, 162, 121));
+					g2.fill(new Rectangle2D.Double( (i+1)*CASE_DIM, (k+1)*CASE_DIM, CASE_DIM, CASE_DIM ));
+					isColored = !isColored;
+				}
+					
+				g2.setPaint(new Color(215, 91, 69));
+				g2.fill(new Rectangle2D.Double( (3)*CASE_DIM, (k+1)*CASE_DIM, CASE_DIM, CASE_DIM ));
+				
+				g2.setPaint(new Color(238, 157, 27));
+				g2.fill(new Rectangle2D.Double( (4)*CASE_DIM, (k+1)*CASE_DIM, CASE_DIM, CASE_DIM ));
+				
+				g2.setPaint(new Color(215, 91, 69));
+				g2.fill(new Rectangle2D.Double( (5)*CASE_DIM, (k+1)*CASE_DIM, CASE_DIM, CASE_DIM ));
+				
+				for(int i = 5; i < 7; i++) {
+					if(isColored)
+						g2.setPaint(new Color(210, 169, 112));
+					else
+						g2.setPaint(new Color(213, 162, 121));
+					g2.fill(new Rectangle2D.Double( (i+1)*CASE_DIM, (k+1)*CASE_DIM, CASE_DIM, CASE_DIM ));
+					isColored = !isColored;
+				}
+			}
+			
+			else if( k==1 || k==7 ) {
+				for(int i = 0; i < 3; i++) {
+					if(isColored)
+						g2.setPaint(new Color(210, 169, 112));
+					else
+						g2.setPaint(new Color(213, 162, 121));
+					g2.fill(new Rectangle2D.Double( (i+1)*CASE_DIM, (k+1)*CASE_DIM, CASE_DIM, CASE_DIM ));
+					isColored = !isColored;
+				}
+				
+				g2.setPaint(new Color(215, 91, 69));
+				g2.fill(new Rectangle2D.Double( (4)*CASE_DIM, (k+1)*CASE_DIM, CASE_DIM, CASE_DIM ));
+				
+				for(int i = 4; i < 7; i++) {
+					if(isColored)
+						g2.setPaint(new Color(210, 169, 112));
+					else
+						g2.setPaint(new Color(213, 162, 121));
+					g2.fill(new Rectangle2D.Double( (i+1)*CASE_DIM, (k+1)*CASE_DIM, CASE_DIM, CASE_DIM ));
+					isColored = !isColored;
+				}
+			}
+			
+			else if( k >= 3 && k <= 5 ) {
+				
+				g2.setPaint(new Color(213, 162, 121));
+				g2.fill(new Rectangle2D.Double( CASE_DIM, (k+1)*CASE_DIM, CASE_DIM, CASE_DIM ));
+				
+				g2.setPaint(new Color(213, 162, 121));
+				g2.fill(new Rectangle2D.Double( 4*CASE_DIM, (k+1)*CASE_DIM, CASE_DIM, CASE_DIM ));
+				
+				g2.setPaint(new Color(213, 162, 121));
+				g2.fill(new Rectangle2D.Double( 7*CASE_DIM, (k+1)*CASE_DIM, CASE_DIM, CASE_DIM ));
+				
+				for(int i = 1; i < 3; i++) {
+					g2.setPaint(Color.cyan);
+					g2.fill(new Rectangle2D.Double( (i+1)*CASE_DIM, (k+1)*CASE_DIM, CASE_DIM, CASE_DIM ));
+				}
+				
+				for(int i = 4; i < 6; i++) {
+					g2.setPaint(Color.cyan);
+					g2.fill(new Rectangle2D.Double( (i+1)*CASE_DIM, (k+1)*CASE_DIM, CASE_DIM, CASE_DIM ));
+				}
+			}
+			
+			else {
+				for(int i = 0; i < 7; i++) {
+					if(isColored)
+						g2.setPaint(new Color(210, 169, 112));
+					else
+						g2.setPaint(new Color(213, 162, 121));
+					g2.fill(new Rectangle2D.Double( (i+1)*CASE_DIM, (k+1)*CASE_DIM, CASE_DIM, CASE_DIM ));
+					isColored = !isColored;
+				}
+			}
+			
+		}
+			
+			
+		g2.dispose();
+	}
+	
+}
